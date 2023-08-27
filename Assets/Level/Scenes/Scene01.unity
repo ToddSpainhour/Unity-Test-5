@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 130199772}
   - component: {fileID: 130199771}
   - component: {fileID: 130199770}
+  - component: {fileID: 130199773}
+  - component: {fileID: 130199774}
   m_Layer: 5
   m_Name: interactive-item-key
   m_TagString: Untagged
@@ -244,6 +246,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130199768}
   m_CullTransparentMesh: 1
+--- !u!114 &130199773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130199768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7b3d98984c0a34baf683c61fc2e587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Key
+  itemDescription: Shiny key that looks be be made of solid gold
+  isInventoryItem: 1
+--- !u!114 &130199774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130199768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 130199773}
+          m_TargetAssemblyTypeName: InteractiveItem, Assembly-CSharp
+          m_MethodName: DisplayInteractiveItemDetails
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &440158128
 GameObject:
   m_ObjectHideFlags: 0
