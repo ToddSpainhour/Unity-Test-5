@@ -11,7 +11,7 @@ public class CustomCursors : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("CustomCursors script just started");
+        //Debug.Log("CustomCursors script just started");
         Cursor.SetCursor(cursorPlusSign, Vector2.zero, CursorMode.ForceSoftware);
     }
 
@@ -25,14 +25,14 @@ public class CustomCursors : MonoBehaviour
     public void OnInteractiveItemCursorEnter()
     {
         // change cursor to circle
-        Debug.Log("CustomCursors OnInteractiveItemCursorEnter method");
+        //Debug.Log("CustomCursors OnInteractiveItemCursorEnter method");
         Cursor.SetCursor(cursorCircle, Vector2.zero, CursorMode.Auto);
     }
 
     public void OnInteractiveItemCursorExit()
     {
         // auto or force??
-        Debug.Log("CustomCursors OnInteractiveItemCursorExit method");
+        //Debug.Log("CustomCursors OnInteractiveItemCursorExit method");
         Cursor.SetCursor(cursorPlusSign, Vector2.zero, CursorMode.ForceSoftware);
     }
 }
