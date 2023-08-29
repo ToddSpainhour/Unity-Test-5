@@ -16,6 +16,6 @@ public class DynamicallyDisplayInteractiveItemDetails : MonoBehaviour
         Debug.Log("DynamicallyDisplayItemName just ran!!");
 
         itemName_text = dynamicItemName.GetComponent<Text>();
-        itemName_text.text = "how to make this the item's name?";
+        itemName_text.text = "I changed!";
     }
 }

@@ -5,49 +5,34 @@ using UnityEngine.UI; // use this with legacy text
 
 public class InteractiveItem : MonoBehaviour
 {
-    
-    // this let's you reach back into Unity to interact with variables there like the properties below; it's find finding a control
-    // UI Text GameObjects
-    public GameObject interactiveItemKey;
-    //public GameObject dynamicItemNameHello; 
-
-
-    // Game Variables
+    // variables created here creates a editable slots in the inspector for whatever GameOject has this script is attached
     public string itemName;
     public string itemDescription;
     public bool isInventoryItem;
 
+    // creating these GameObject variables here also creates a slot back in Unity
+    // with the purpose of connecting another GameObject to this variable
+    // you do that by dragging the GameObject from the hierarchy to the empty slot
+    public GameObject dynamicTitleName;
+    public GameObject dynamicTitleDescription;
+    public GameObject dynamicTitleIsInventoryItem;
 
-    // Text Component
-    //Text dynamicItemName;
+
+    // Unity handles constructors on its own. Making constructors yourself will cause major problems
 
     void Start()
     {
-        
+        // Start() is useful to set upvariables, read preferences, and make connections with other GameObjects
+
+        dynamicTitleName.GetComponent<UnityEngine.UI.Text>().text = itemName;
+        dynamicTitleDescription.GetComponent<UnityEngine.UI.Text>().text = itemDescription;
+        dynamicTitleIsInventoryItem.GetComponent<UnityEngine.UI.Text>().text = isInventoryItem.ToString();
+
     }
 
 
-    // 
     public void DisplayInteractiveItemDetails()
     {
-        //dynamicItemName = dynamicItemNameHello.GetComponent<Text>();
-
-        InteractiveItem key = interactiveItemKey.GetComponent<InteractiveItem>();
-        Debug.Log("key.itemName " + key.itemName);
-        Debug.Log("key.itemDescription " + key.itemDescription);
-        Debug.Log("key.isInventoryItem " + key.isInventoryItem);
+     // Update() is the place to handle the frame update for the GameObject  
     }
-
-    // reassign one of the UI variables to be the items details
-    //Debug.Log("you hovered over an interactive item");
-
-    // this just initializes the component??
-    // Debug.Log("itemName_text.text: " + itemName_text.text);
-
-
-    /*
-    * if you assign a GameObject this C# script in Unity, 
-    * it makes the properties below show up as fillable textboxes in that GameObject's inspector back in Unity.
-    * there you can assign the values (like the key in this example) 
-    */
 }
